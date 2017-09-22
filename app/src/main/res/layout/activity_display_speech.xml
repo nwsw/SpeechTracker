@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:keepScreenOn="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="net.nwsw.speechtracker.DisplaySpeechActivity">
+
+    <TextView
+        android:id="@+id/counter_Clock"
+        android:layout_width="304dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:text="00:00"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="72sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <Button
+        android:id="@+id/btn_Doubles"
+        android:layout_width="127dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:onClick="doDoubles"
+        android:text="Doubles"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/counter_Clock" />
+
+    <TextView
+        android:id="@+id/counter_Doubles"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="monospace"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:onClick="doDoubles"
+        android:clickable="true"
+        app:layout_constraintLeft_toRightOf="@+id/btn_Doubles"
+        app:layout_constraintTop_toBottomOf="@+id/counter_Clock" />
+
+    <Button
+        android:id="@+id/btn_Uhs"
+        android:layout_width="127dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="32dp"
+        android:onClick="doUms"
+        android:text="Pauses"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_Doubles" />
+
+    <TextView
+        android:id="@+id/counter_Uhs"
+        android:layout_width="80dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="monospace"
+        android:text="0"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:onClick="doUms"
+        android:clickable="true"
+        app:layout_constraintLeft_toRightOf="@+id/btn_Uhs"
+        app:layout_constraintTop_toBottomOf="@+id/counter_Doubles" />
+
+    <Button
+        android:id="@+id/btn_Stop"
+        android:layout_width="135dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginRight="32dp"
+        android:onClick="doStop"
+        android:text="Stop"
+        android:textColor="@color/colorAccent"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <android.support.constraint.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/guideline"
+        app:layout_constraintGuide_begin="20dp"
+        android:orientation="horizontal" />
+
+</android.support.constraint.ConstraintLayout>
