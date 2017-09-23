@@ -19,7 +19,7 @@ public class DisplaySpeechActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_speech);
         startTime = System.currentTimeMillis();
         isDone = false;
-        cdt = new CountDownTimer(999999, 1000) {
+        cdt = new CountDownTimer(0x3fffffff, 1000) {
             public void onTick(long millisUntilFinished) {
                 TextView txt = (TextView) findViewById(R.id.counter_Clock);
                 long d = (System.currentTimeMillis() - startTime)/1000;

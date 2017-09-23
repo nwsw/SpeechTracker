@@ -10,7 +10,7 @@
         android:id="@+id/button"
         android:layout_width="155dp"
         android:layout_height="104dp"
-        android:onClick="sendMessage"
+        android:onClick="startTracker"
         android:text="Start"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="36sp"
