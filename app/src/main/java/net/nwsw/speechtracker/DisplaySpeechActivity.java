@@ -7,11 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.media.MediaPlayer;
 
 public class DisplaySpeechActivity extends AppCompatActivity {
     private Long startTime;
     private CountDownTimer cdt;
     private boolean isDone;
+    private MediaPlayer mp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +21,8 @@ public class DisplaySpeechActivity extends AppCompatActivity {
         setContentView(R.layout.activity_display_speech);
         startTime = System.currentTimeMillis();
         isDone = false;
+        mp = null;
+
         cdt = new CountDownTimer(0x3fffffff, 1000) {
             public void onTick(long millisUntilFinished) {
                 TextView txt = (TextView) findViewById(R.id.counter_Clock);
@@ -37,7 +41,14 @@ public class DisplaySpeechActivity extends AppCompatActivity {
         cdt.cancel();
     }
 
+    protected void playSound(int resid) {
+        if (mp != null) { mp.release(); }
+        mp = MediaPlayer.create(this,resid);
+        mp.start();
+    }
+
     public void doDoubles(View view) {
+        playSound(R.raw.oopsie);
         TextView txt = (TextView) findViewById(R.id.counter_Doubles);
         String sv = txt.getText().toString();
         int n = Integer.parseInt(sv) + 1;
@@ -45,6 +56,7 @@ public class DisplaySpeechActivity extends AppCompatActivity {
     }
 
     public void doUms(View view) {
+        playSound(R.raw.uhoh);
         TextView txt = (TextView) findViewById(R.id.counter_Uhs);
         String sv = txt.getText().toString();
         int n = Integer.parseInt(sv) + 1;
